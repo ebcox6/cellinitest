@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Data Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 5px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Element Data Table</h2>
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Original Sample</th>
+            <th>Concentrated Residue</th>
+            <th>Percent Increase</th>
+            <th>Purified Sample</th>
+            <th>Percent Decrease</th>
+        </tr>
+        <script>
+            const elements = [
+                ["Aluminum", 5.0, 10.0, 100, "0.02", "99.6"],
+                ["Ammonia", 1.0, 5.0, 400, "<0.04", ">60"],
+                ["Arsenic", 42, 120, 186, "<0.005", ">99.9"],
+                ["Barium", 74, 244, 230, "<0.1", ">99.8"],
+                ["Cadmium", 0.147, 0.83, 464, "<0.005", ">96.5"],
+                ["Calcium", 276, 633, 129, "0.10", "99.96"],
+                ["Chlorides", 5100, 17100, 235, "1.0", "99.98"],
+                ["Chromium", 31900, 128000, 301, "0.01", "99.99"],
+                ["Cobalt", 49.4, 153, 210, "<0.05", ">99.9"],
+                ["Copper", 50, 310, 520, "0.05", "99.90"],
+            ];
+            
+            elements.forEach(row => {
+                document.write("<tr>");
+                document.write(`<td><button onclick='alert("${row[0]} selected")'>${row[0]}</button></td>`);
+                for (let i = 1; i < row.length; i++) {
+                    document.write(`<td>${row[i]}</td>`);
+                }
+                document.write("</tr>");
+            });
+        </script>
+    </table>
+</body>
+</html>
